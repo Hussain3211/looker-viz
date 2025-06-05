@@ -1,11 +1,13 @@
 const dscc = window.dscc;
 
+document.body.innerHTML = '<div id="viz"></div>'; // ✅ required for visualization to work
+
 dscc.subscribeToData(function(data) {
   const container = document.getElementById("viz");
   container.innerHTML = "";
 
   const row = data.tables.DEFAULT[0];
-  const raw = row["examples"]; // Replace with your actual field
+  const raw = row["examples"]; // Replace with your actual field name
   if (!raw) return;
 
   const lines = raw.split(/\n|,\s*/);
