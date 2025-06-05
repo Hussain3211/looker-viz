@@ -1,0 +1,25 @@
+// Called when chart is rendered
+const dscc = window.dscc;
+
+dscc.subscribeToData(function(data) {
+  const container = document.getElementById("viz");
+  container.innerHTML = "";
+
+  const row = data.tables.DEFAULT[0];
+  const urlsRaw = row["examples"]; // Replace with your actual dimension name
+  if (!urlsRaw) return;
+
+  const lines = urlsRaw.split(/\r?\n|,\s*/);
+  const list = document.createElement("ul");
+  lines.forEach(url => {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = url.trim();
+    link.target = "_blank";
+    link.innerText = url.trim();
+    item.appendChild(link);
+    list.appendChild(item);
+  });
+
+  container.appendChild(list);
+});

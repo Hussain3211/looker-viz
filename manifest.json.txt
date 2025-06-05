@@ -1,0 +1,9 @@
+{
+  "dataStudio": {
+    "name": "URL List Formatter",
+    "description": "Turns newline-separated URLs into a list",
+    "company": "Your Company",
+    "visualizationUrl": "https://yourdomain.com/visualization.js",
+    "logoUrl": "https://yourdomain.com/logo.png"
+  }
+}
